@@ -17,9 +17,9 @@ const Product: React.FC = () => {
     console.log(product)
 
     return <>
-        <main>
+        <main style={{ width: "100vw", display: "flex", flexDirection: "column", alignItems: "center" }} className='paddingTop'>
             <h1>Produto Selecionado</h1>
-            <section style={{ display: "flex", gap: 12 }}>
+            <section style={{ display: "flex", gap: 12, alignItems: "center", justifyContent: "center", marginTop: 24 }}>
                 <CardProductViewOne amount={product?.quantidade} name={product?.produto} category={product?.categoria} created_at={product?.created_at} onReturn={() => navigate("/")} />
             </section>
         </main></>;

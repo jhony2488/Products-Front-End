@@ -16,7 +16,7 @@ export interface PropsProductsForm {
 export const FormCreateProduct = ({ onSubmit }: PropsProductsForm) => {
     const { register, control, handleSubmit } = useForm<{ products: Product[] }>({
         defaultValues: {
-            products: [{ name: '', price: 0, quantity: 0 }],
+            products: [{ name: '', price: "0", quantity: 0, category: "" }],
         },
     });
 
@@ -69,19 +69,21 @@ export const FormCreateProduct = ({ onSubmit }: PropsProductsForm) => {
                             />
                         </Form.Group>
                     </Col>
-                    <Col xs="auto" className="align-self-end">
+                    <Col className="align-button-remove">
                         <Button variant="danger" onClick={() => remove(index)}>
                             Remover
                         </Button>
                     </Col>
                 </Row>
             ))}
-            <Button variant="primary" onClick={() => append({ name: '', price: "0", quantity: 0, category: "" })}>
-                Adicionar Produto
-            </Button>
-            <Button type="submit" variant="success" className="mt-3">
-                Criar Produtos
-            </Button>
+            <div style={{ display: "flex", gap: 12, alignItems: "center", justifyContent: "center", marginTop: 24 }}>
+                <Button variant="primary" onClick={() => append({ name: '', price: "0", quantity: 0, category: "" })}>
+                    Adicionar Produto
+                </Button>
+                <Button type="submit" variant="success" >
+                    Criar Produtos
+                </Button>
+            </div>
         </Form>
     );
 };

@@ -38,17 +38,17 @@ const UpdatedProduct: React.FC = () => {
     <main>
       {loading ? <div style={{ width: "100vw", height: "100vh", display: "grid", justifyItems: "center", alignItems: "center" }}>
         <Spinner animation="border" variant="primary" />
-      </div> : <>
+      </div> : <div style={{ display: "flex", justifyContent: "flex-start", alignItems: "center", flexDirection: "column", minHeight: "100vh", width: "100vw" }} className='paddingTop'>
         {
           error.isError && <Alert variant={"danger"}>
             {error.message}
           </Alert>
         }
         <h1>Editar Produto</h1>
-        <section style={{ display: "grid", gap: 12 }}>
+        <section style={{ display: "grid", gap: 12, marginTop: 16 }}>
           <FormUpdatedProduct onSubmit={onEditProduct} />
         </section>
-      </>}
+      </div>}
 
     </main></>;
 };

@@ -13,7 +13,7 @@ export interface PropsProductsCard {
 
 export function CardProduct({ name, price, amount, category, onViewOne, onExclude, onEdit }: PropsProductsCard) {
     return (
-        <Card style={{ width: '300px' }}>
+        <Card style={{ width: '300px', paddingBottom: 16, paddingTop: 8}}>
             <Card.Body style={{ width: '100%', display: "flex", justifyContent: "center", flexDirection: "column" }}>
                 <Card.Title>{name}</Card.Title>
                 <Card.Text>
@@ -29,7 +29,9 @@ export function CardProduct({ name, price, amount, category, onViewOne, onExclud
                     <Button variant="success" onClick={() => onEdit()}>Editar</Button>
                     <Button variant="danger" onClick={() => onExclude()}>Excluir</Button>
                 </div>
+                <div style={{display: "flex", justifyContent: "center", alignItems: "center" }}>
                 <Button style={{width: "200px"}} variant="primary" onClick={() => onViewOne()}>Ver Mais</Button>
+                </div>
             </Card.Body>
         </Card>
     );

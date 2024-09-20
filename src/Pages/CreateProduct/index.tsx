@@ -44,9 +44,9 @@ const CreateProduct: React.FC = () => {
   return <>
     {loading ? <div style={{ width: "100vw", height: "100vh", display: "grid", justifyItems: "center", alignItems: "center" }}>
       <Spinner animation="border" variant="primary" />
-    </div> : <main>
+    </div> : <main style={{ display: "flex", justifyContent: "flex-start", alignItems: "center", flexDirection: "column", width: "100vw", minHeight: "100vh" }} className='paddingTop'>
       <h1>Criar novos produtos</h1>
-      <section style={{ display: "flex", gap: 12 }}>
+      <section style={{ display: "flex", gap: 12, paddingBottom: 40, paddingTop: 36 }}>
         <FormCreateProduct onSubmit={onCreateProduct} />
       </section>
     </main>}
