@@ -1,9 +1,9 @@
-import axios from 'axios';
+import axios from 'axios'
 
-axios.defaults.headers.post['Authorization'] = `Bearer ${process.env.API_TOKEN}`;
+const apiUrl = import.meta.env.VITE_API_URL
 
-axios.defaults.headers.post['Content-Type'] = 'application/json';
+axios.defaults.headers.post['Content-Type'] = 'application/json'
 
-const api = axios.create({ baseURL:  process.env.API_URL });
+const api = axios.create({ baseURL: apiUrl })
 
-export { api };
+export { api }
